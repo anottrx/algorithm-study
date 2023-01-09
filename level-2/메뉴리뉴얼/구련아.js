@@ -1,4 +1,5 @@
 const getCombination = (arr, selectedCount, totalCount) => {
+  // 조합
   if (selectedCount === totalCount) return arr.map((el) => [el]);
   const result = [];
   arr.forEach((cur, index, origin) => {
@@ -11,35 +12,35 @@ const getCombination = (arr, selectedCount, totalCount) => {
 };
 
 function solution(orders, course) {
-  const courseSet = new Set();
-  orders.forEach((order, index) => {
-    const splited = order.split("");
-    for (let i = 2; i <= splited.length; i++) {
-      const result = getCombination(splited, 1, i);
-      result.forEach((res) => {
+  const courseSet = new Set(); // 코스요리 종류 (문자열 형태: 'AB')
+  orders.forEach((order) => {
+    const orderSplited = order.split("");
+    for (let i = 2; i <= orderSplited.length; i++) {
+      const courseList = getCombination(orderSplited, 1, i);
+      courseList.forEach((res) => {
         courseSet.add(res.sort().join(""));
       });
     }
   });
 
-  const courseMap = new Map();
+  const courseMap = new Map(); // key:코스개수, value: {max:최대개수, list:해당하는 코스리스트}
   course.forEach((count) => {
     courseMap.set(count, { max: 2, list: [] });
   });
   courseSet.forEach((courseStr) => {
-    let count = 0;
+    let count = 0; // orders에 해당 코스를 주문한 사람
     const courseStrSet = new Set(courseStr.split(""));
     orders.forEach((order) => {
-      const orderSet = new Set(order.split(""));
       let courseCount = 0;
       courseStrSet.forEach((v) => {
-        if (orderSet.has(v)) courseCount++;
+        if (order.includes(v)) courseCount++;
       });
       if (courseStrSet.size === courseCount) count++;
     });
     if (courseMap.has(courseStr.length)) {
       const courseObj = courseMap.get(courseStr.length);
       if (courseObj.max < count) {
+        // 코스 주문한 사람이 더 많다면 바꾸기
         courseObj.max = count;
         courseObj.list = [courseStr];
       } else if (courseObj.max === count) {
