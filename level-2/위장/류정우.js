@@ -10,7 +10,7 @@ const getClothesObj = (clothes) => {
 };
 
 function solution(clothes) {
-  var answer = 1;
+  let answer = 1;
 
   const clothesObj = getClothesObj(clothes);
   Object.values(clothesObj).forEach((clothes) => {
