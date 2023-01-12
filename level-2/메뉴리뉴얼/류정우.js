@@ -49,7 +49,7 @@ const getCourses = (courseCandidates, course) => {
     });
   });
 
-  return courses;
+  return courses.sort();
 };
 
 function solution(orders, course) {
@@ -57,5 +57,5 @@ function solution(orders, course) {
   const courseCandidates = getCourseCandidates(sortedOrders, course);
   const courses = getCourses(courseCandidates, course);
 
-  return courses.sort();
+  return courses;
 }
