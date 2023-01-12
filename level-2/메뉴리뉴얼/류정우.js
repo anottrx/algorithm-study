@@ -14,7 +14,6 @@ const getCombinations = (arr, selectNumber) => {
 
 const addCourse = (orders, menuCount, courses) => {
   const targetOrders = orders.filter((order) => order.length >= menuCount);
-
   targetOrders.forEach((order) => {
     const combinations = getCombinations([...order], menuCount);
     combinations.forEach((combination) => {
@@ -27,7 +26,6 @@ const addCourse = (orders, menuCount, courses) => {
 
 const getCourseCandidates = (orders, course) => {
   let courses = {};
-
   course.forEach((menuCount) => {
     courses = addCourse(orders, menuCount, courses);
   });
@@ -37,13 +35,11 @@ const getCourseCandidates = (orders, course) => {
 
 const getCourses = (courseCandidates, course) => {
   const courses = [];
-
   course.forEach((menuCount) => {
     const targetCourses = Object.entries(courseCandidates).filter(
       ([key, value]) => key.length === menuCount && value >= 2
     );
     const max = Math.max(...targetCourses.map(([_, value]) => value));
-
     targetCourses.forEach(([key, value]) => {
       if (value === max) courses.push(key);
     });
