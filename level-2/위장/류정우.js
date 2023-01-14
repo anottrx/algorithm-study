@@ -9,13 +9,18 @@ const getClothesObj = (clothes) => {
   }, {});
 };
 
-function solution(clothes) {
-  let answer = 1;
-
-  const clothesObj = getClothesObj(clothes);
+const getClothesCombinationCount = (clothesObj) => {
+  let clothesCombinationCount = 1;
   Object.values(clothesObj).forEach((clothes) => {
-    answer *= clothes.length + 1;
+    clothesCombinationCount *= clothes.length + 1;
   });
 
-  return answer - 1;
+  return clothesCombinationCount - 1;
+};
+
+function solution(clothes) {
+  const clothesObj = getClothesObj(clothes);
+  const clothesCombinationCount = getClothesCombinationCount(clothesObj);
+
+  return clothesCombinationCount;
 }
