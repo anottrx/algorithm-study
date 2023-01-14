@@ -4,19 +4,18 @@ const splitBrackets = (brackets) => {
   let leftCount = 0;
   let rightCount = 0;
 
-  for (let i = 0; i < brackets.length; i++) {
-    const curBracket = brackets[i];
-    u += curBracket;
-    if (curBracket === '(') {
+  [...brackets].some((bracket, index) => {
+    u += bracket;
+    if (bracket === '(') {
       leftCount += 1;
     } else {
       rightCount += 1;
     }
     if (leftCount === rightCount) {
-      v += brackets.slice(i + 1);
-      break;
+      v += brackets.slice(index + 1);
+      return true;
     }
-  }
+  });
 
   return [u, v];
 };
@@ -34,30 +33,32 @@ const checkBracketsCorrectness = (brackets) => {
   return stack.length === 0;
 };
 
-const getRefactorU = (u, v) => {
-  let refactorU = `(${getCorrectBrackets(v)})`;
-  [...u.slice(1, u.length - 1)].forEach((bracket) => {
+const getRefactorUV = (u, v) => {
+  let refactorUV = `(${getCorrectBrackets(v)})`;
+  [...u.slice(1, u.length - 1)].some((bracket) => {
     if (bracket === '(') {
-      refactorU += ')';
-    } else {
-      refactorU += '(';
+      refactorUV += ')';
+      return false;
     }
+    refactorUV += '(';
   });
 
-  return refactorU;
+  return refactorUV;
 };
 
 const getCorrectBrackets = (p) => {
   const [u, v] = splitBrackets(p);
   const isCorrectU = checkBracketsCorrectness(u);
+  if (isCorrectU) {
+    if (v == '') return u;
+    return u + getCorrectBrackets(v);
+  }
 
-  if (isCorrectU && v == '') return u;
-  if (isCorrectU) return u + getCorrectBrackets(v);
-
-  return getRefactorU(u, v);
+  return getRefactorUV(u, v);
 };
 
 function solution(p) {
   const correctBrackets = getCorrectBrackets(p);
+
   return correctBrackets;
 }
