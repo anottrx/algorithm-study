@@ -1,11 +1,13 @@
-function solution(progresses, speeds) {
-  const answer = [];
-
-  const remainingDays = progresses.reduce((remainingDays, progress, index) => {
+const getRemainingDays = (progresses, speeds) => {
+  return progresses.reduce((remainingDays, progress, index) => {
     remainingDays.push(Math.ceil((100 - progress) / speeds[index]));
 
     return remainingDays;
   }, []);
+};
+
+const getDistributionCount = (remainingDays) => {
+  const distributionCount = [];
 
   let index = 0;
   let count = 1;
@@ -15,10 +17,17 @@ function solution(progresses, speeds) {
       count++;
       continue;
     }
-    answer.push(count);
+    distributionCount.push(count);
     index = j + 1;
     count = 1;
   }
 
-  return answer;
+  return distributionCount;
+};
+
+function solution(progresses, speeds) {
+  const remainingDays = getRemainingDays(progresses, speeds);
+  const distributionCount = getDistributionCount(remainingDays);
+
+  return distributionCount;
 }
