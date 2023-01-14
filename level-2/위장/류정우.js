@@ -1,18 +1,15 @@
 const getClothesObj = (clothes) => {
-  return clothes.reduce((acc, [name, type]) => {
-    if (acc[type]) {
-      acc[type].push(name);
-      return acc;
-    }
-    acc[type] = [name];
-    return acc;
+  return clothes.reduce((clothesObj, [_, type]) => {
+    clothesObj[type] = (clothesObj[type] || 0) + 1;
+
+    return clothesObj;
   }, {});
 };
 
 const getClothesCombinationCount = (clothesObj) => {
   let clothesCombinationCount = 1;
-  Object.values(clothesObj).forEach((clothes) => {
-    clothesCombinationCount *= clothes.length + 1;
+  Object.values(clothesObj).forEach((clothCount) => {
+    clothesCombinationCount *= clothCount + 1;
   });
 
   return clothesCombinationCount - 1;
