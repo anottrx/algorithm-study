@@ -1,13 +1,4 @@
----
-name: 문제 풀이 제출
-about: 문제 푼 내용을 제출합니다
-title: '문제 풀이 제출 - '
-labels: ''
-assignees: ''
-
----
-
-- [ ] 
-- [ ] 
-- [ ]
-- [ ]
+- [x] [괄호 변환](https://school.programmers.co.kr/learn/courses/30/lessons/60058)
+- [x] [메뉴 리뉴얼](https://school.programmers.co.kr/learn/courses/30/lessons/72411)
+- [x] [기능개발](https://school.programmers.co.kr/learn/courses/30/lessons/42586?language=javascript)
+- [x] [위장](https://school.programmers.co.kr/learn/courses/30/lessons/42578)
