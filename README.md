@@ -22,9 +22,12 @@
 
 ## 일정
 
-| 날짜           | 구련아                                                                       | 김성중                                                                         | 류정우                                                                                          | 신승현                                                                  |
-| -------------- | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| 2023.01.14(토) | [괄호 변환](https://school.programmers.co.kr/learn/courses/30/lessons/60058) | [메뉴 리뉴얼](https://school.programmers.co.kr/learn/courses/30/lessons/72411) | [기능개발](https://school.programmers.co.kr/learn/courses/30/lessons/42586?language=javascript) | [위장](https://school.programmers.co.kr/learn/courses/30/lessons/42578) |
+| 날짜           | 구련아                                                                                   | 김성중                                                                           | 류정우                                                                                          | 신승현                                                                                  |
+| -------------- | ---------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| 2023.01.15(일) | [괄호 변환](https://school.programmers.co.kr/learn/courses/30/lessons/60058)             | [메뉴 리뉴얼](https://school.programmers.co.kr/learn/courses/30/lessons/72411)   | [기능개발](https://school.programmers.co.kr/learn/courses/30/lessons/42586?language=javascript) | [위장](https://school.programmers.co.kr/learn/courses/30/lessons/42578)                 |
+| 2023.01.20(금) | [쿼드압축 후 개수 세기](https://school.programmers.co.kr/learn/courses/30/lessons/68936) | [[3차]방금그곡](https://school.programmers.co.kr/learn/courses/30/lessons/17683) | [타겟 넘버](https://school.programmers.co.kr/learn/courses/30/lessons/43165)                    | [행렬 테두리 회전하기](https://school.programmers.co.kr/learn/courses/30/lessons/77485) |
+
+<!-- | 2023.01.15(일) | []() | []() | []() | []() | -->
 
 <br />
 <br />
