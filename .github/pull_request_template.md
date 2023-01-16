@@ -1,13 +1,4 @@
----
-name: 문제 풀이 제출
-about: 문제 푼 내용을 제출합니다
-title: '문제 풀이 제출 - '
-labels: ''
-assignees: ''
-
----
-
-- [ ] 
-- [ ] 
-- [ ]
-- [ ]
+- [ ] [쿼드압축 후 개수 세기](https://school.programmers.co.kr/learn/courses/30/lessons/68936)
+- [ ] [[3차]방금그곡](https://school.programmers.co.kr/learn/courses/30/lessons/17683)
+- [ ] [타겟 넘버](https://school.programmers.co.kr/learn/courses/30/lessons/43165)
+- [ ] [행렬 테두리 회전하기](https://school.programmers.co.kr/learn/courses/30/lessons/77485)
