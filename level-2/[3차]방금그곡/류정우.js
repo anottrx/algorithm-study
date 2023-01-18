@@ -5,13 +5,13 @@ const getPlayedMinutes = (startTime, endTime) => {
   return (endHour - startHour) * 60 + (endMinite - startMinite);
 };
 
-const getCompressTunes = (tunes) => tunes.replace(/\w#/g, (tune) => tune[0].toLowerCase());
+const getCompressedTunes = (tunes) => tunes.replace(/\w#/g, (tune) => tune[0].toLowerCase());
 
 const getTargetTitle = (m, musicinfos) => {
   const candidates = musicinfos.map((musicInfo) => {
     const [startTime, endTime, title, melody] = musicInfo.split(',');
     const playedMinites = getPlayedMinutes(startTime, endTime);
-    const compressedMelody = getCompressTunes(melody);
+    const compressedMelody = getCompressedTunes(melody);
 
     const hearedMelody =
       compressedMelody.repeat(Math.floor(playedMinites / compressedMelody.length)) +
@@ -24,7 +24,7 @@ const getTargetTitle = (m, musicinfos) => {
 };
 
 function solution(m, musicinfos) {
-  const compressedM = getCompressTunes(m);
+  const compressedM = getCompressedTunes(m);
   const targetTitle = getTargetTitle(compressedM, musicinfos);
 
   return targetTitle || '(None)';
