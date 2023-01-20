@@ -37,19 +37,15 @@ function solution(rows, columns, queries) {
 
     for (let i = y1 + 1; i <= y2; i++) {
       emptyArr[x1][i] = prevArr[x1][i - 1];
-      console.log('x1 i | x1 i-1', x1, i, x1, i - 1);
     }
     for (let i = x1 + 1; i <= x2; i++) {
       emptyArr[i][y2] = prevArr[i - 1][y2];
-      console.log('i y2 | i-1 y2', i, y2, i - 1, y2);
     }
     for (let i = y2 - 1; i >= y1; i--) {
       emptyArr[x2][i] = prevArr[x2][i + 1];
-      console.log('x2,i | x2,i+1', x2, i, x2, i + 1);
     }
     for (let i = x2 - 1; i >= x1; i--) {
       emptyArr[i][y1] = prevArr[i + 1][y1];
-      console.log('i,y1 | i+1,y1', i, y1, i + 1, y1);
     }
 
     for (let i = 0; i < rows; i++) {
