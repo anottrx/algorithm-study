@@ -38,12 +38,7 @@ function solution(rows, columns, queries) {
   const answer = [];
   const board = makeBoard(rows, columns);
   queries.forEach((query) => {
-    const [startX, startY, endX, endY] = [
-      query[0] - 1,
-      query[1] - 1,
-      query[2] - 1,
-      query[3] - 1,
-    ];
+    const [startX, startY, endX, endY] = query.map((v) => v - 1);
     const positions = getPosition(startX, startY, endX, endY);
 
     let originValues = [board[startX][startY]]; // 시작점 값
