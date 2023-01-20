@@ -1,8 +1,6 @@
 const splitBrackets = (brackets) => {
-  let u = '';
-  let v = '';
-  let leftCount = 0;
-  let rightCount = 0;
+  let [u, v] = ['', ''];
+  let [leftCount, rightCount] = [0, 0];
 
   [...brackets].some((bracket, index) => {
     u += bracket;
