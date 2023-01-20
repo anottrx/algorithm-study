@@ -1,4 +1,4 @@
-- [x] [쿼드압축 후 개수 세기](https://school.programmers.co.kr/learn/courses/30/lessons/68936)
-- [ ] [[3차]방금그곡](https://school.programmers.co.kr/learn/courses/30/lessons/17683)
-- [x] [타겟 넘버](https://school.programmers.co.kr/learn/courses/30/lessons/43165)
-- [ ] [행렬 테두리 회전하기](https://school.programmers.co.kr/learn/courses/30/lessons/77485)
+- [ ] [큰 수 만들기](https://school.programmers.co.kr/learn/courses/30/lessons/42883)
+- [ ] [가장 먼 노드](https://school.programmers.co.kr/learn/courses/30/lessons/49189)
+- [ ] [가장 큰 수](https://school.programmers.co.kr/learn/courses/30/lessons/42746)
+- [ ] [스킬트리](https://school.programmers.co.kr/learn/courses/30/lessons/49993)
