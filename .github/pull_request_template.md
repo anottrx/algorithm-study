@@ -1,4 +1,4 @@
 - [ ] [큰 수 만들기](https://school.programmers.co.kr/learn/courses/30/lessons/42883)
 - [ ] [가장 먼 노드](https://school.programmers.co.kr/learn/courses/30/lessons/49189)
 - [ ] [가장 큰 수](https://school.programmers.co.kr/learn/courses/30/lessons/42746)
-- [ ] [스킬트리](https://school.programmers.co.kr/learn/courses/30/lessons/49993)
+- [x] [스킬트리](https://school.programmers.co.kr/learn/courses/30/lessons/49993)
