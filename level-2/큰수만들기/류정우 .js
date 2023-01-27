@@ -1,22 +1,13 @@
 const getBiggestNumber = (number, k) => {
-  let [start, end] = [0, k + 1];
-  let biggestNumber = '';
+  const stack = [-1];
 
-  for (let i = 0; i < number.length - k; i++) {
-    if (start === end) {
-      biggestNumber += number.slice(start);
-      break;
+  [...number].forEach((num, index) => {
+    if (stack[stack.length - 1] < num) {
+      stack.pop();
+      stack.push(num);
     }
-
-    const slicedNumber = number.slice(start, end);
-    const max = Math.max(...slicedNumber);
-    const maxIndex = number.slice(start, end).indexOf(max);
-    biggestNumber += max;
-
-    [start, end] = [start + maxIndex + 1, end + 1];
-  }
-
-  return biggestNumber;
+    k--;
+  });
 };
 
 function solution(number, k) {
