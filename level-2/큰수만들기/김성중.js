@@ -18,7 +18,6 @@ function solution(number, k) {
 // 2트
 function solution(number, k) {
   const stack = [];
-  let max = "";
 
   for (const n of number) {
     while (k && stack[stack.length - 1] < n) {
