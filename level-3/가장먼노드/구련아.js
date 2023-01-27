@@ -9,17 +9,17 @@ function solution(n, edge) {
   const visited = Array.from({ length: n + 1 }, () => false); // 방문 체크
   const dists = Array.from({ length: n + 1 }, () => 0); // 거리 길이
 
-  const stacks = [1]; // 1부터 시작
+  const queue = [1]; // 1부터 시작
   visited[1] = true;
-  while (stacks.length > 0) {
+  while (queue.length > 0) {
     // bfs
-    const start = stacks.shift();
+    const start = queue.shift();
     const ends = nodes.get(start);
     ends.forEach((end) => {
       if (!visited[end]) {
         visited[end] = true;
         dists[end] = dists[start] + 1;
-        stacks.push(end);
+        queue.push(end);
       }
     });
   }
