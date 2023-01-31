@@ -1,5 +1,4 @@
 const fs = require("fs");
-// const [n, ...arr] = fs.readFileSync("text").toString().trim().split("\n");
 const [n, ...arr] = fs.readFileSync("/dev/stdin").toString().trim().split("\n");
 
 const map = arr.map((input) => input.split("").map(Number));
