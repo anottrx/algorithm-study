@@ -16,23 +16,28 @@ for (let i = 1; i <= N; i++) {
 
 function solution(M, N, tomatoes) {
   let day = 0;
-  let dx = [-1, 0, 1, 0];
-  let dy = [0, 1, 0, -1];
+  const dx = [-1, 0, 1, 0];
+  const dy = [0, 1, 0, -1];
   let queue = [];
+  let idx = 0; //  조회할 인덱스
   let isTomato = 0; // 상자 안에 토마토가 모두 익은 상태
   // 1(익은 토마토)이 어디있는지 찾음 , 토마토가 익었는지 확인
   for (let i = 0; i < N; i++) {
-    if (tomatoes[i].includes(0)) isTomato = 1;
-    if (tomatoes[i].includes(1)) queue.push([i, tomatoes[i].indexOf(1)]);
+    for (let j = 0; j < M; j++) {
+      if (tomatoes[i][j] === 0) isTomato = 1;
+      if (tomatoes[i][j] === 1) queue.push([i, j]);
+    }
   }
+
   // 이미 상자 안에 토마토가 다 익었는지 확인했다면 바로 0 리턴
   if (isTomato === 0) return 0;
 
   while (queue.length) {
     let queueStack = queue.length;
     let hasChanged = 0; // 토마토가 전날 대비 익었는지 확인 플래그
-    for (let i = 0; i < queueStack; i++) {
-      let [x, y] = queue.shift();
+    for (let i = idx; i < queueStack; i++) {
+      let [x, y] = queue[idx];
+      idx++;
       for (let k = 0; k < 4; k++) {
         nx = x + dx[k];
         ny = y + dy[k];
