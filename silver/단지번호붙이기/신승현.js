@@ -12,45 +12,6 @@ for (let i = 1; i <= inputCount; i++) {
   testCases.push(testCase);
 }
 
-function solutionDFS(N, arr) {
-  let answer = 0;
-  let dx = [-1, 0, 1, 0];
-  let dy = [0, 1, 0, -1];
-  let answerArr = [];
-  let cnt = 1;
-
-  function DFS(x, y, cnt) {
-    // let max = Number.MIN_SAFE_INTEGER;
-    arr[x][y] = 0;
-    temp = 0;
-    for (let k = 0; k < 4; k++) {
-      let nx = x + dx[k];
-      let ny = y + dy[k];
-      if (nx >= 0 && nx < N && ny >= 0 && ny < N && arr[nx][ny] === 1) {
-        ++cnt;
-        console.log('nx ny', nx, ny, cnt);
-        DFS(nx, ny, cnt);
-      }
-      // answerArr.push(cnt);
-    }
-  }
-
-  for (let i = 0; i < N; i++) {
-    for (let j = 0; j < N; j++) {
-      if (arr[i][j] === 1) {
-        answer += 1;
-        DFS(i, j, cnt);
-        console.log('END');
-        answerArr.push(cnt);
-      }
-    }
-  }
-  console.log(answer);
-  console.log(answerArr);
-}
-
-// 행렬(6,3) 에서 하나가 누락된다.
-
 function solutionBFS(N, board) {
   let answer = 0;
   let answerArr = [];
@@ -84,7 +45,46 @@ function solutionBFS(N, board) {
     }
   }
   console.log(answer);
-  answerArr.map((e) => console.log(e));
+  answerArr.sort((a, b) => a - b).map((e) => console.log(e));
 }
 
 solutionBFS(inputCount, testCases);
+
+// function solutionDFS(N, arr) {
+//   let answer = 0;
+//   let dx = [-1, 0, 1, 0];
+//   let dy = [0, 1, 0, -1];
+//   let answerArr = [];
+//   let cnt = 1;
+
+//   function DFS(x, y, cnt) {
+//     // let max = Number.MIN_SAFE_INTEGER;
+//     arr[x][y] = 0;
+//     temp = 0;
+//     for (let k = 0; k < 4; k++) {
+//       let nx = x + dx[k];
+//       let ny = y + dy[k];
+//       if (nx >= 0 && nx < N && ny >= 0 && ny < N && arr[nx][ny] === 1) {
+//         ++cnt;
+//         DFS(nx, ny, cnt);
+//       }
+//       // answerArr.push(cnt);
+//     }
+//   }
+
+//   for (let i = 0; i < N; i++) {
+//     for (let j = 0; j < N; j++) {
+//       if (arr[i][j] === 1) {
+//         answer += 1;
+//         DFS(i, j, cnt);
+//         answerArr.push(cnt);
+//       }
+//     }
+//   }
+//   // answerArr.sort((a, b) => a - b);
+//   console.log(answer);
+//   answerArr.sort((a, b) => a - b).map((e) => console.log(e));
+// }
+
+// 6,3 에서 하나가 누락된다.
+// solutionDFS(inputCount, testCases);
