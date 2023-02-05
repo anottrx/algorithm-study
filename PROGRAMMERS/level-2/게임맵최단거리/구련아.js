@@ -1,5 +1,4 @@
 function solution(maps) {
-  let answer = -1;
   const d = [
     [0, 1],
     [0, -1],
@@ -17,8 +16,7 @@ function solution(maps) {
     // bfs
     const [curX, curY, curDist] = q.shift();
     if (curX === n - 1 && curY === m - 1) {
-      // answer가 -1이라면 처음이므로 현재이동거리고 저장하고, 아니라면 최솟값을 저장
-      answer = answer === -1 ? curDist : Math.min(n * m, curDist);
+      return curDist; // 끝에 도착하면 무조건 끝
     }
     for (let dd = 0; dd < 4; dd++) {
       const [dx, dy] = [curX + d[dd][0], curY + d[dd][1]];
@@ -35,5 +33,5 @@ function solution(maps) {
       }
     }
   }
-  return answer;
+  return -1; // 여기에 오면 끝에 도착하지 못했단 뜻
 }
