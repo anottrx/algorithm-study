@@ -25,7 +25,7 @@ function solution(numbers) {
 
   const isPrime = (num) => {
     if (num < 2) return false;
-    for (var i = 2; i <= num / 2; i++) {
+    for (let i = 2; i <= num / 2; i++) {
       if (num % i === 0) return false;
     }
     return true;
