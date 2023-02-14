@@ -2,12 +2,13 @@ function solution(n) {
   if (n % 2 === 1 || n < 2) return 0;
 
   const MOD = 1_000_000_007;
-  const normarlize = ([a, b]) => (((4 * b) % MOD) - (a % MOD) + MOD) % MOD;
+  const normarlize = ([prev, res]) =>
+    (((4 * res) % MOD) - (prev % MOD) + MOD) % MOD;
 
-  let arr = [3, 11];
-  n = n / 2 - 1;
+  let [prev, res] = [3, 11];
 
-  for (let i = 2; i <= n; i++) arr = [arr[1], normarlize(arr)];
+  for (let i = 2; i <= n / 2 - 1; i++)
+    [prev, res] = [res, normarlize([prev, res])];
 
-  return arr[1];
+  return res;
 }
