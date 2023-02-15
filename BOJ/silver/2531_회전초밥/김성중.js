@@ -17,7 +17,7 @@ const solution = ({ N, d, k, c, sushi }) => {
     max = Math.max(max, temp.size);
   }
 
-  console.log(max);
+  return max;
 };
 
-solution({ N, d, k, c, sushi });
+console.log(solution({ N, d, k, c, sushi }));
