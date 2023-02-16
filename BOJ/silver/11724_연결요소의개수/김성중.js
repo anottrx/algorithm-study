@@ -40,7 +40,7 @@ const solution = ({ N, M, edge }) => {
     }
   }
 
-  console.log(count);
+  return count;
 };
 
-solution({ N, M, edge });
+console.log(solution({ N, M, edge }));
