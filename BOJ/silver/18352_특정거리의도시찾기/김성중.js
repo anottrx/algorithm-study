@@ -10,7 +10,6 @@ const input = fs
 
 const [N, M, K, X] = input.shift();
 const connects = input;
-let loc = 0;
 
 const solution = ({ N, M, K, X, connects }) => {
   const connected = Array.from({ length: N + 1 }, () => []);
